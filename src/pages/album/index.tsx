@@ -6,8 +6,12 @@ import { fetchPhotos } from "../../redux/slices/photosSlice";
 import { fetchUsers } from "../../redux/slices/usersSlice";
 import { fetchAlbums } from "../../redux/slices/albumsSlice";
 import styles from "./album.module.scss";
-import PhotoCardModal from "../../components/organisms/PhotoCardModal/PhotoCardModal";
-import { albumCardLabels, BUTTON_LOAD_MORE_TEXT } from "../../constants";
+import PhotoCardModal from "../../components/organisms/PhotoCardModal";
+import {
+  albumCardLabels,
+  BUTTON_LOAD_MORE_TEXT,
+  LOAD_MORE_END_TEXT,
+} from "../../constants";
 import { getAlbumTitle, getUserName } from "../../utils/utils";
 import {
   AlbumsState,
@@ -24,6 +28,7 @@ const Album = (): JSX.Element => {
     items: photos,
     loading: loadingPhotos,
     page,
+    hasMore,
   }: PhotosState = useSelector((state: RootState) => state.photos);
   const { items: users, loading: loadingUsers }: UsersState = useSelector(
     (state: RootState) => state.users
@@ -131,14 +136,25 @@ const Album = (): JSX.Element => {
           ))}
         </Grid>
         <div className="cdnt-flex">
-          <Button
-            variant="contained"
-            className="btn-load-more"
-            onClick={handleLoadMore}
-            disabled={loadingPhotos || loadingAlbums || loadingUsers}
-          >
-            {BUTTON_LOAD_MORE_TEXT}
-          </Button>
+          {hasMore ? (
+            <Button
+              variant="contained"
+              className="btn-load-more"
+              onClick={handleLoadMore}
+              disabled={loadingPhotos || loadingAlbums || loadingUsers}
+            >
+              {BUTTON_LOAD_MORE_TEXT}
+            </Button>
+          ) : (
+            <Typography
+              variant="body2"
+              color="textSecondary"
+              align="center"
+              sx={{ margin: "32px auto" }}
+            >
+              {LOAD_MORE_END_TEXT}
+            </Typography>
+          )}
         </div>
       </div>
       <PhotoCardModal

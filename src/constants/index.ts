@@ -5,6 +5,7 @@ const COPYRIGHT_TEXT = `© ${CURRENT_YEAR} MySite. All rights reserved.`;
 const UNKNOWN_USER_TEXT = "Unknown User";
 const UNKNOWN_ALBUM_TEXT = "Unknown Album";
 const BUTTON_LOAD_MORE_TEXT = "Load more...";
+const LOAD_MORE_END_TEXT = "You've reached the end!";
 const SKELTON_COUNT = 3;
 const NO_IMAGE_AVAILABLE_PATH = "/images/placeholder_400x200.svg";
 const POST_PAGE_TITLE = "Posts";
@@ -51,6 +52,7 @@ export {
   COPYRIGHT_TEXT,
   UNKNOWN_USER_TEXT,
   BUTTON_LOAD_MORE_TEXT,
+  LOAD_MORE_END_TEXT,
   UNKNOWN_ALBUM_TEXT,
   SKELTON_COUNT,
   NO_IMAGE_AVAILABLE_PATH,

@@ -15,6 +15,7 @@ interface PhotosState {
   items: Photo[];
   loading: boolean;
   page: number;
+  hasMore: boolean;
 }
 
 interface Album {
@@ -50,6 +51,7 @@ interface PostsState {
   items: Post[];
   loading: boolean;
   page: number;
+  hasMore: boolean;
 }
 
 export type {

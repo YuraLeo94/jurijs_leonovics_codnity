@@ -13,6 +13,7 @@ const initialState: PhotosState = {
   items: [],
   loading: false,
   page: 1,
+  hasMore: true,
 };
 
 const photosSlice = createSlice({
@@ -25,6 +26,10 @@ const photosSlice = createSlice({
     });
     builder.addCase(fetchPhotos.fulfilled, (state, action) => {
       state.loading = false;
+      if (action.payload.length === 0) {
+        state.hasMore = false;
+        return;
+      }
       state.items.push(...action.payload);
       state.page += 1;
     });

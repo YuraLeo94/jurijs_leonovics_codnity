@@ -7,14 +7,14 @@ import {
   IconButton,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
-import { RootState } from "../../../redux/store";
+import { RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
 import {
   NO_IMAGE_AVAILABLE_PATH,
   postCardModalLabels,
   UNKNOWN_ALBUM_TEXT,
   UNKNOWN_USER_TEXT,
-} from "../../../constants";
+} from "../../constants";
 import {
   Album,
   AlbumsState,
@@ -22,7 +22,7 @@ import {
   PhotosState,
   User,
   UsersState,
-} from "../../../types/global";
+} from "../../types/global";
 
 interface PhotoCardModalProps {
   open: boolean;
