@@ -47,7 +47,6 @@ const Album = (): JSX.Element => {
     }
   }, [dispatch, photos.length]);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (photos.length === 0 || loadingPhotos || loadingAlbums) return;
 
@@ -62,9 +61,9 @@ const Album = (): JSX.Element => {
     if (missingAlbumIds.length > 0) {
       dispatch(fetchAlbums(missingAlbumIds));
     }
+    // eslint-disable-next-line
   }, [dispatch, photos, albums]);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (albums.length === 0 || loadingAlbums || loadingUsers) return;
 
@@ -79,6 +78,7 @@ const Album = (): JSX.Element => {
     if (missingUserIds.length > 0) {
       dispatch(fetchUsers(missingUserIds));
     }
+    // eslint-disable-next-line
   }, [dispatch, albums, users]);
 
   const handleLoadMore = (): void => {

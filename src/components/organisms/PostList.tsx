@@ -35,7 +35,6 @@ const PostList = (): JSX.Element => {
     }
   }, [dispatch, posts.length, loading]);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (posts.length === 0 || loading || loadingUsers) return;
 
@@ -50,6 +49,7 @@ const PostList = (): JSX.Element => {
     if (missingUserIds.length > 0) {
       dispatch(fetchUsers(missingUserIds));
     }
+    // eslint-disable-next-line
   }, [dispatch, posts, users]);
 
   const handleLoadMore = (): void => {
