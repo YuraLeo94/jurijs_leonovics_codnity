@@ -11,6 +11,7 @@ import {
   albumCardLabels,
   BUTTON_LOAD_MORE_TEXT,
   LOAD_MORE_END_TEXT,
+  NO_IMAGE_AVAILABLE_PATH,
 } from "../../constants";
 import { getAlbumTitle, getUserName } from "../../utils/utils";
 import {
@@ -105,7 +106,7 @@ const Album = (): JSX.Element => {
                     e: React.SyntheticEvent<HTMLImageElement, Event>
                   ) => {
                     e.currentTarget.onerror = null;
-                    e.currentTarget.src = "/images/placeholder_400x200.svg";
+                    e.currentTarget.src = NO_IMAGE_AVAILABLE_PATH;
                   }}
                 />
                 <CardContent>
