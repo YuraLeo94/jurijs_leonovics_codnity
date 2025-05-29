@@ -1,0 +1,41 @@
+.cdnt-bold {
+  font-weight: 700 !important;
+}
+
+.cdnt-flex {
+  display: flex !important;
+}
+
+// Buttons
+.btn-load-more {
+  margin: 32px auto !important;
+}
+
+// Spacing
+.cdnt-m-0 {
+  margin: 0 !important;
+}
+
+// Container
+.container {
+  max-width: 1276px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+  width: 100% !important;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding-left: 48px !important;
+    padding-right: 48px !important;
+  }
+}
